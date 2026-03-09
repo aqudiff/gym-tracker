@@ -4,6 +4,7 @@ import ExerciseSearch from './components/ExerciseSearch';
 import SetLogger from './components/SetLogger';
 import ExerciseSummary from './components/ExerciseSummary';
 import ExerciseDetail from './components/ExerciseDetail';
+import Settings from './components/Settings';
 
 export default function App() {
   const [tab, setTab] = useState('log');
@@ -49,6 +50,8 @@ export default function App() {
             onBack={() => setDetailExercise(null)}
           />
         )}
+
+        {tab === 'settings' && <Settings />}
       </main>
 
       <nav className="app-nav">
@@ -65,6 +68,13 @@ export default function App() {
         >
           <span className="nav-icon">📊</span>
           <span className="nav-label">Progreso</span>
+        </button>
+        <button
+          className={`nav-btn ${tab === 'settings' ? 'active' : ''}`}
+          onClick={() => { setTab('settings'); setDetailExercise(null); }}
+        >
+          <span className="nav-icon">⚙️</span>
+          <span className="nav-label">Ajustes</span>
         </button>
       </nav>
     </div>

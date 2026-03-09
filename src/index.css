@@ -613,3 +613,69 @@ input[type=number]::-webkit-outer-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+
+/* Settings */
+.settings h2 {
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+.settings-section {
+  background: var(--bg-card);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.settings-section h3 {
+  font-size: 14px;
+  color: var(--text-dim);
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.settings-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.2s;
+  margin-bottom: 8px;
+}
+
+.settings-btn:last-of-type {
+  margin-bottom: 0;
+}
+
+.settings-btn:active {
+  border-color: var(--accent);
+}
+
+.settings-btn-icon {
+  font-size: 20px;
+}
+
+.settings-msg {
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.settings-msg.success {
+  background: rgba(74, 222, 128, 0.15);
+  color: var(--accent);
+}
+
+.settings-msg.error {
+  background: rgba(248, 113, 113, 0.15);
+  color: var(--danger);
+}

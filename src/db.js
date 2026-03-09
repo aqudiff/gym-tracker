@@ -216,3 +216,23 @@ export async function getAllExercisesSummary() {
 
   return summaries.sort((a, b) => b.lastSessionDate - a.lastSessionDate);
 }
+
+export async function exportData() {
+  const [exercises, sets, sessions] = await Promise.all([
+    db.exercises.toArray(),
+    db.sets.toArray(),
+    db.sessions.toArray()
+  ]);
+  return { exercises, sets, sessions };
+}
+
+export async function importData(data) {
+  if (!data?.exercises || !data?.sets || !data?.sessions) {
+    throw new Error('Formato de archivo no válido');
+  }
+  await db.transaction('rw', db.exercises, db.sets, db.sessions, async () => {
+    await db.exercises.bulkPut(data.exercises);
+    await db.sessions.bulkPut(data.sessions);
+    await db.sets.bulkPut(data.sets);
+  });
+}
