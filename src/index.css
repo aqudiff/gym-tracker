@@ -19,15 +19,8 @@
 }
 
 html, body, #root {
-  height: 100dvh;
-  height: 100vh; /* fallback */
+  height: 100%;
   width: 100%;
-}
-
-@supports (height: 100dvh) {
-  html, body, #root {
-    height: 100dvh;
-  }
 }
 
 body {
@@ -42,16 +35,13 @@ body {
 .app {
   display: flex;
   flex-direction: column;
-  height: 100dvh;
-  height: 100vh; /* fallback */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   max-width: 480px;
   margin: 0 auto;
-}
-
-@supports (height: 100dvh) {
-  .app {
-    height: 100dvh;
-  }
 }
 
 .app-loading {
