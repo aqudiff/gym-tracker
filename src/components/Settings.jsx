@@ -14,7 +14,7 @@ export default function Settings() {
       const date = new Date().toISOString().slice(0, 10);
       const a = document.createElement('a');
       a.href = url;
-      a.download = `gym-tracker-${date}.json`;
+      a.download = `my-reps-${date}.json`;
       a.click();
       URL.revokeObjectURL(url);
       setMessage({ type: 'success', text: 'Datos exportados correctamente' });

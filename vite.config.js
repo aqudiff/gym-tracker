@@ -10,8 +10,8 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['icon-192.svg', 'icon-512.svg'],
       manifest: {
-        name: 'Gym Tracker',
-        short_name: 'GymTracker',
+        name: 'My Reps',
+        short_name: 'My Reps',
         description: 'Registro de progreso de entrenamiento de fuerza',
         theme_color: '#0f0f1a',
         background_color: '#0f0f1a',
