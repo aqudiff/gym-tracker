@@ -84,6 +84,7 @@ body {
   display: flex;
   border-top: 1px solid var(--border);
   background: var(--nav-bg);
+  padding-bottom: 10px;
   z-index: 10;
 }
 
