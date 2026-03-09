@@ -19,8 +19,15 @@
 }
 
 html, body, #root {
-  height: 100%;
+  height: 100dvh;
+  height: 100vh; /* fallback */
   width: 100%;
+}
+
+@supports (height: 100dvh) {
+  html, body, #root {
+    height: 100dvh;
+  }
 }
 
 body {
@@ -35,9 +42,16 @@ body {
 .app {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: 100dvh;
+  height: 100vh; /* fallback */
   max-width: 480px;
   margin: 0 auto;
+}
+
+@supports (height: 100dvh) {
+  .app {
+    height: 100dvh;
+  }
 }
 
 .app-loading {
@@ -50,6 +64,7 @@ body {
 
 .app-header {
   padding: 16px 20px 8px;
+  padding-top: calc(env(safe-area-inset-top, 0px) + 16px);
   flex-shrink: 0;
 }
 
